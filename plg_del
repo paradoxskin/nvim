@@ -1,0 +1,13 @@
+#!/bin/bash
+default_path="pack/default/start/"
+if [ $# -eq 1 ]; then
+    plg_path="$default_path$(basename $1 .git)"
+elif [ $# -eq 2 ]; then
+    plg_path="$default_path$2"
+elif [ $# -eq 3 ]; then
+    plg_path="pack/$2/start/$3"
+fi
+git submodule deinit $plg_path
+git rm -r -f $plg_path
+rm -rf .git/modules/$plg_path
+git commit
