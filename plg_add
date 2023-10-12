@@ -7,4 +7,4 @@ elif [ $# -eq 2 ]; then
 elif [ $# -eq 3 ]; then
     git submodule add $1 pack/$2/start/$3
 fi
-git commit
+echo ">  DoNOtFORGET git commit  <"

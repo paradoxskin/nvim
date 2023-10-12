@@ -1,0 +1,39 @@
+[submodule "pack/beaut/start/boringBubble.nvim"]
+	path = pack/beaut/start/boringBubble.nvim
+	url = git@github.com:paradoxskin/boringBubble.nvim.git
+[submodule "pack/beaut/start/vim-snazzy"]
+	path = pack/beaut/start/vim-snazzy
+	url = git@github.com:paradoxskin/vim-snazzy.git
+[submodule "pack/beaut/start/lightline.vim"]
+	path = pack/beaut/start/lightline.vim
+	url = git@github.com:itchyny/lightline.vim.git
+[submodule "pack/useful/start/nvim-lspconfig"]
+	path = pack/useful/start/nvim-lspconfig
+	url = git@github.com:neovim/nvim-lspconfig.git
+[submodule "pack/useful/start/neodev.nvim"]
+	path = pack/useful/start/neodev.nvim
+	url = git@github.com:folke/neodev.nvim.git
+[submodule "pack/useful/start/ultisnips"]
+	path = pack/useful/start/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "pack/useful/start/vim-snippets"]
+	path = pack/useful/start/vim-snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule "pack/syntax/start/vim-pico8-syntax"]
+	path = pack/syntax/start/vim-pico8-syntax
+	url = git@github.com:paradoxskin/vim-pico8-syntax.git
+[submodule "pack/cmp/start/cmp-buffer"]
+	path = pack/cmp/start/cmp-buffer
+	url = git@github.com:hrsh7th/cmp-buffer.git
+[submodule "pack/cmp/start/cmp-nvim-lsp"]
+	path = pack/cmp/start/cmp-nvim-lsp
+	url = git@github.com:hrsh7th/cmp-nvim-lsp.git
+[submodule "pack/cmp/start/cmp-nvim-ultisnips"]
+	path = pack/cmp/start/cmp-nvim-ultisnips
+	url = git@github.com:quangnguyen30192/cmp-nvim-ultisnips.git
+[submodule "pack/cmp/start/cmp-path"]
+	path = pack/cmp/start/cmp-path
+	url = git@github.com:hrsh7th/cmp-path.git
+[submodule "pack/cmp/start/nvim-cmp"]
+	path = pack/cmp/start/nvim-cmp
+	url = git@github.com:hrsh7th/nvim-cmp.git
