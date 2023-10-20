@@ -4,7 +4,7 @@ vim.opt.spr = true
 vim.opt.fdm = "manual"
 vim.bo.formatoptions = "jcroqlt"
 -- clipboard
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = ""
 -- case
 vim.opt.smartcase = true
 vim.opt.ignorecase = true

@@ -1,3 +1,25 @@
+-- custom function
+local keybind = function(line)
+    local mode = line.mode
+    if mode == nil then
+        mode = "n"
+    end
+    if line.opts ~= nil then
+        vim.keymap.set(mode, line.from, line.to, line.opts)
+    else
+        vim.keymap.set(mode, line.from, line.to)
+    end
+end
+
+function TriggerDiagonstic()
+    if vim.diagnostic.is_disabled() then
+        vim.diagnostic.enable()
+    else
+        vim.diagnostic.disable()
+    end
+end
+
+-- maplist
 vim.g.mapleader = " "
 local maplist = {
     --full: {from = "", to = "", mode = "" or {"", ""} [, opts = {}] },
@@ -6,8 +28,8 @@ local maplist = {
     -- misc
     {from = "s", to = ":edit "},
     {from = "S", to = ":vsp "},
-    {from = "H", to = "0"},
-    {from = "L", to = "$"},
+    {from = "H", to = "0", mode = {"n", "v"}},
+    {from = "L", to = "$", mode = {"n", "v"}},
     {from = "<S-Tab>", to = "<C-d>", mode = "i"},
 
     -- leader
@@ -32,23 +54,20 @@ local maplist = {
     {from = "<C-y>", to = "mTggVG\"+y"},
     {from = "<C-y>", to = "mT\"+y", mode = "v"},
 
+    -- lsp
+    {from = "<Leader>g", to = ""}, -- jump TODO
+    {from = "<Leader>d", to = ":lua TriggerDiagonstic()<CR>"},
+    {from = "<Leader>K", to = ":lua vim.lsp.buf.hover()<CR>"},
+    {from = "-", to = ":lua vim.diagnostic.goto_next()<CR>"},
+    {from = "_", to = ":lua vim.diagnostic.goto_prev()<CR>"},
+
 }
 
-exec = function()
+-- bind
+local exec = function()
     for _, line in ipairs(maplist) do
         keybind(line)
     end
 end
 
-function keybind(line)
-    mode = line.mode
-    if mode == nil then
-        mode = "n"
-    end
-    if line.opts ~= nil then
-        vim.keymap.set(mode, line.from, line.to, line.opts)
-    else
-        vim.keymap.set(mode, line.from, line.to)
-    end
-end
 exec()
