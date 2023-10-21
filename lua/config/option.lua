@@ -1,7 +1,10 @@
+-- useful
 vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.spr = true
 vim.opt.fdm = "manual"
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("$HOME/.cache/nvim/undo")
 vim.bo.formatoptions = "jcroqlt"
 -- clipboard
 vim.opt.clipboard = ""

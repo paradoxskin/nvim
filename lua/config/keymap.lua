@@ -29,6 +29,9 @@ local maplist = {
     {from = "s", to = ":edit "},
     {from = "S", to = ":vsp "},
     {from = "H", to = "0", mode = {"n", "v"}},
+        -- TODO some problem in undo
+        {from = "J", to = ":m '>+1<CR>gv=gv", mode = {"v"}},
+        {from = "K", to = ":m '<-2<CR>gv=gv", mode = {"v"}},
     {from = "L", to = "$", mode = {"n", "v"}},
     {from = "<S-Tab>", to = "<C-d>", mode = "i"},
 
@@ -38,15 +41,15 @@ local maplist = {
     {from = "<Leader>k", to = "<C-w>k"},
     {from = "<Leader>l", to = "<C-w>l"},
     {from = "<Leader>f", to = "<C-o>"},
-    {from = "<Leader>n", to = ":bn<CR>"},
-    {from = "<Leader>N", to = ":bp<CR>"},
-    {from = "<Leader>C", to = ":bd!<CR>"},
+    {from = "<Leader>n", to = "<cmd>bn<CR>"},
+    {from = "<Leader>N", to = "<cmd>bp<CR>"},
+    {from = "<Leader>C", to = "<cmd>bd!<CR>"},
     {from = "<Leader>i", to = "g<C-g>", mode = "v"},
-    {from = "<Leader>z", to = ":set invcursorline<CR>"},
+    {from = "<Leader>z", to = "<cmd>set invcursorline<CR>"},
     {from = "<Leader>2", to = "@q"},
     {from = "<Leader>a", to = "mTggVG"},
     {from = "<Leader>b", to = "`Tzz"},
-    {from = "<Leader><CR>", to = ":set nohlsearch<CR>"},
+    {from = "<Leader><CR>", to = "<cmd>set invhlsearch<CR>"},
 
     -- ctrl
     {from = "<C-z>", to = ":qa!"},
@@ -56,10 +59,10 @@ local maplist = {
 
     -- lsp
     {from = "<Leader>g", to = ""}, -- jump TODO
-    {from = "<Leader>d", to = ":lua TriggerDiagonstic()<CR>"},
-    {from = "<Leader>K", to = ":lua vim.lsp.buf.hover()<CR>"},
-    {from = "-", to = ":lua vim.diagnostic.goto_next()<CR>"},
-    {from = "_", to = ":lua vim.diagnostic.goto_prev()<CR>"},
+    {from = "<Leader>d", to = "<cmd>lua TriggerDiagonstic()<CR>"},
+    {from = "<Leader>K", to = "<cmd>lua vim.lsp.buf.hover()<CR>"},
+    {from = "-", to = "<cmd>lua vim.diagnostic.goto_next()<CR>"},
+    {from = "_", to = "<cmd>lua vim.diagnostic.goto_prev()<CR>"},
 
 }
 
