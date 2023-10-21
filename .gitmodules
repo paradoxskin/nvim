@@ -37,3 +37,6 @@
 [submodule "pack/cmp/start/nvim-cmp"]
 	path = pack/cmp/start/nvim-cmp
 	url = git@github.com:hrsh7th/nvim-cmp.git
+[submodule "pack/useful/start/indentLine"]
+	path = pack/useful/start/indentLine
+	url = git@github.com:Yggdroot/indentLine.git
