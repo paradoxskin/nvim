@@ -1,10 +1,10 @@
 #!/bin/bash
 default_path="pack/default/start/"
 if [ $# -eq 1 ]; then
-    git submodule add $1 $default_path$(basename $1 .git)
+    git submodule add --depth=1 $1 $default_path$(basename $1 .git)
 elif [ $# -eq 2 ]; then
-    git submodule add $1 pack/$2/start/$(basename $1 .git)
+    git submodule add --depth=1 $1 pack/$2/start/$(basename $1 .git)
 elif [ $# -eq 3 ]; then
-    git submodule add $1 pack/$2/start/$3
+    git submodule add --depth=1 $1 pack/$2/start/$3
 fi
 echo ">  DoNOtFORGET git commit  <"

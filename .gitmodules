@@ -40,3 +40,6 @@
 [submodule "pack/useful/start/indentLine"]
 	path = pack/useful/start/indentLine
 	url = git@github.com:Yggdroot/indentLine.git
+[submodule "pack/useful/start/gitsigns.nvim"]
+	path = pack/useful/start/gitsigns.nvim
+	url = git@github.com:lewis6991/gitsigns.nvim.git

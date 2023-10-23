@@ -18,6 +18,18 @@ vim.g.bubble_map = {" ", " "}
 vim.g.bubble_len = 3
 vim.g.bubble_show = 0
 
+-- gitsign
+require('gitsigns').setup{
+    signs = {
+        add          = { text = '│' },
+        change       = { text = '│' },
+        delete       = { text = '│' },
+        topdelete    = { text = '|' },
+        changedelete = { text = '|' },
+        untracked    = { text = '┆' },
+    }
+}
+
 -- lsp
 require("lsp.all")
 
