@@ -49,3 +49,9 @@
 [submodule "pack/deps/start/plenary.nvim"]
 	path = pack/deps/start/plenary.nvim
 	url = git@github.com:nvim-lua/plenary.nvim.git
+[submodule "pack/default/start/cellular-automaton.nvim"]
+	path = pack/default/start/cellular-automaton.nvim
+	url = git@github.com:Eandrju/cellular-automaton.nvim.git
+[submodule "pack/useful/start/nvim-treesitter"]
+	path = pack/useful/start/nvim-treesitter
+	url = git@github.com:nvim-treesitter/nvim-treesitter.git
