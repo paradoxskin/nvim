@@ -6,6 +6,7 @@ vim.opt.fdm = "manual"
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("$HOME/.cache/nvim/undo")
 vim.bo.formatoptions = "jcroqlt"
+vim.opt.mouse = ""
 -- clipboard
 vim.opt.clipboard = ""
 -- case
