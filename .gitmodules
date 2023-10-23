@@ -43,3 +43,9 @@
 [submodule "pack/useful/start/gitsigns.nvim"]
 	path = pack/useful/start/gitsigns.nvim
 	url = git@github.com:lewis6991/gitsigns.nvim.git
+[submodule "pack/useful/start/telescope.nvim"]
+	path = pack/useful/start/telescope.nvim
+	url = git@github.com:nvim-telescope/telescope.nvim.git
+[submodule "pack/deps/start/plenary.nvim"]
+	path = pack/deps/start/plenary.nvim
+	url = git@github.com:nvim-lua/plenary.nvim.git

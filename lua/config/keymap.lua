@@ -35,7 +35,7 @@ local maplist = {
     {from = "L", to = "$", mode = {"n", "v"}},
     {from = "<S-Tab>", to = "<C-d>", mode = "i"},
 
-    -- leader
+    -- leader-base
     {from = "<Leader>h", to = "<C-w>h"},
     {from = "<Leader>j", to = "<C-w>j"},
     {from = "<Leader>k", to = "<C-w>k"},
@@ -58,11 +58,20 @@ local maplist = {
     {from = "<C-y>", to = "mT\"+y", mode = "v"},
 
     -- lsp
-    {from = "<Leader>g", to = ""}, -- jump TODO
+    {from = "<Leader>g", to = "<cmd>lua vim.lsp.buf.definition()<CR>"}, -- jump TODO
     {from = "<Leader>d", to = "<cmd>lua TriggerDiagonstic()<CR>"},
+    {from = "<Leader>rn", to = "<cmd>lua vim.lsp.buf.rename()<CR>"},
     {from = "<Leader>K", to = "<cmd>lua vim.lsp.buf.hover()<CR>"},
     {from = "-", to = "<cmd>lua vim.diagnostic.goto_next()<CR>"},
     {from = "_", to = "<cmd>lua vim.diagnostic.goto_prev()<CR>"},
+
+    -- telescope
+    {from = "<Leader><space>", to = "<cmd>Telescope buffers<CR>"},
+    {from = "<Leader>;;", to = "<cmd>Telescope<CR>"},
+    {from = "<Leader>;/", to = "<cmd>Telescope current_buffer_fuzzy_find<CR>"},
+    {from = "<Leader>;`", to = "<cmd>Telescope oldfiles<CR>"},
+    {from = "<Leader>;g", to = "<cmd>Telescope live_grep<CR>"},
+    {from = "<Leader>;f", to = "<cmd>Telescope find_files<CR>"},
 
 }
 
