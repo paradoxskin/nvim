@@ -58,7 +58,7 @@ local maplist = {
     {from = "<C-y>", to = "mT\"+y", mode = "v"},
 
     -- lsp
-    {from = "<Leader>g", to = "<cmd>lua vim.lsp.buf.definition()<CR>"}, -- jump TODO
+    {from = "<Leader>g", to = "<cmd>lua vim.lsp.buf.definition()<CR>"}, -- jump float quickfix TODO
     {from = "<Leader>d", to = "<cmd>lua TriggerDiagonstic()<CR>"},
     {from = "<Leader>rn", to = "<cmd>lua vim.lsp.buf.rename()<CR>"},
     {from = "<Leader>K", to = "<cmd>lua vim.lsp.buf.hover()<CR>"},
@@ -72,6 +72,7 @@ local maplist = {
     {from = "<Leader>;`", to = "<cmd>Telescope oldfiles<CR>"},
     {from = "<Leader>;g", to = "<cmd>Telescope live_grep<CR>"},
     {from = "<Leader>;f", to = "<cmd>Telescope find_files<CR>"},
+    {from = "<Leader>;-", to = "<cmd>Telescope diagnostics<CR>"},
 
     -- fun
     {from = "<Leader>;0", to = "<cmd>CellularAutomaton make_it_rain<CR>"},
