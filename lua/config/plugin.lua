@@ -66,6 +66,9 @@ end
 -- lsp
 require("lsp.all")
 
+-- colorizer
+require("colorizer").setup()
+
 -- snippets
 vim.g.UltiSnipsExpandTrigger = "<c-e>"
 vim.g.UltiSnipsJumpForwardTrigger = "<c-d>"

@@ -58,3 +58,6 @@
 [submodule "pack/useful/start/nvim-treesitter-textobjects"]
 	path = pack/useful/start/nvim-treesitter-textobjects
 	url = git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git
+[submodule "pack/beaut/start/nvim-colorizer.lua"]
+	path = pack/beaut/start/nvim-colorizer.lua
+	url = git@github.com:norcalli/nvim-colorizer.lua.git
