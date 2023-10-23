@@ -7,6 +7,20 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("$HOME/.cache/nvim/undo")
 vim.bo.formatoptions = "jcroqlt"
 vim.opt.mouse = ""
+vim.api.nvim_create_autocmd(
+    "BufWinEnter",
+    {
+        pattern = "*",
+        command = "silent! loadview"
+    }
+)
+vim.api.nvim_create_autocmd(
+    "BufWinLeave",
+    {
+        pattern = "*",
+        command = "silent! mkview"
+    }
+)
 -- clipboard
 vim.opt.clipboard = ""
 -- case

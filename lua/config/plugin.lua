@@ -8,6 +8,10 @@ vim.g.lightline = {
         left = {{'filename'}, {'percent'}, {'modified', 'readonly'}},
         right = {{'lineinfo'}, {'bubble'}, {'fileformat', 'fileencoding', 'filetype'}}
     },
+    inactive = {
+        left = {{'filename'}, {'percent'}, {'modified', 'readonly'}},
+        right = {{'lineinfo'}, {'fileformat', 'fileencoding', 'filetype'}}
+    },
     component = {
         bubble = '%{g:bubble}'
     },
