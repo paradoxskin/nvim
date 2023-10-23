@@ -30,17 +30,39 @@ require('gitsigns').setup{
 }
 
 -- treesitter
-require'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup {
     ensure_installed = "all",
     sync_install = false,
     auto_install = true,
     ignore_install = {},
-    highlight = {
-        enable = true,
-    },
+    highlight = { enable = true },
     modules = {},
-    indent = { enable = true }
+    indent = { enable = true },
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true,
+
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+                ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+            },
+            selection_modes = {
+                ['@parameter.outer'] = 'v', -- charwise
+                ['@function.outer'] = 'V', -- linewise
+                ['@class.outer'] = '<c-v>', -- blockwise
+            },
+            include_surrounding_whitespace = false,
+        }
+    }
 }
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+    vim.api.nvim_set_hl(0, group, {})
+end
+
 -- lsp
 require("lsp.all")
 

@@ -1,9 +1,10 @@
 require'lspconfig'.rust_analyzer.setup{
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = false;
-      }
+    on_attach = function() end,
+    settings = {
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = false;
+            }
+        }
     }
-  }
 }

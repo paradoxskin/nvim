@@ -55,3 +55,6 @@
 [submodule "pack/useful/start/nvim-treesitter"]
 	path = pack/useful/start/nvim-treesitter
 	url = git@github.com:nvim-treesitter/nvim-treesitter.git
+[submodule "pack/useful/start/nvim-treesitter-textobjects"]
+	path = pack/useful/start/nvim-treesitter-textobjects
+	url = git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git
