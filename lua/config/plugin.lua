@@ -68,8 +68,8 @@ end
 require("lsp.all")
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 -- colorizer
@@ -98,35 +98,35 @@ cmp.setup {
         end,
     },
     sources = cmp.config.sources({
-            { name = "nvim_lsp" },
-            { name = "ultisnips" },
-        }, {
+        { name = "nvim_lsp" },
+        { name = "ultisnips" },
+    }, {
             { name = "buffer" },
             { name = "path" }
         }
     ),
-    mapping = cmp.mapping.preset.cmdline({
-            ["<tab>"] = cmp.mapping({
-                i = function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
-                    else
-                        fallback()
-                    end
+    mapping = {
+        ["<tab>"] = cmp.mapping({
+            i = function(fallback)
+                if cmp.visible() then
+                    cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+                else
+                    fallback()
                 end
-            }),
-            ["<s-tab>"] = cmp.mapping({
-                i = function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
-                    else
-                        fallback()
-                    end
-                end
-            }),
-            ["<C-j>"] = cmp.mapping.scroll_docs(3),
-            ["<C-k>"] = cmp.mapping.scroll_docs(-3),
+            end
         }),
+        ["<s-tab>"] = cmp.mapping({
+            i = function(fallback)
+                if cmp.visible() then
+                    cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+                else
+                    fallback()
+                end
+            end
+        }),
+        ["<C-j>"] = cmp.mapping.scroll_docs(3),
+        ["<C-k>"] = cmp.mapping.scroll_docs(-3),
+    },
     formatting = {
         format = function(_, vim_item)
             vim_item.kind = icons[vim_item.kind] or vim_item.kind
