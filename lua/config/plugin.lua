@@ -26,7 +26,8 @@ vim.g.bubble_show = 0
 require('gitsigns').setup{
     signs = {
         changedelete = { text = '[' },
-    }
+    },
+    sign_priority = 100
 }
 
 -- treesitter
@@ -65,6 +66,11 @@ end
 
 -- lsp
 require("lsp.all")
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 -- colorizer
 require("colorizer").setup()
@@ -78,6 +84,13 @@ vim.g.UltiSnipsSnippetDirectories = {"UltiSnips", "~/.config/nvim/UltiSnips"}
 
 -- nvim-cmp
 local cmp = require("cmp")
+local icons = {
+    Function = "󰯻 ",
+    Snippet = " ",
+    Keyword = " ",
+    Variable = "󰰫 ",
+    Text = "󰊄 ",
+}
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -92,22 +105,7 @@ cmp.setup {
             { name = "path" }
         }
     ),
-    mapping = cmp.mapping.preset.insert({
-            ["<c-e>"] = cmp.mapping(
-                function(fallback)
-                    fallback()
-                end
-            ),
-            ["<c-d>"] = cmp.mapping(
-                function(fallback)
-                    fallback()
-                end
-            ),
-            ["<c-f>"] = cmp.mapping(
-                function(fallback)
-                    fallback()
-                end
-            ),
+    mapping = cmp.mapping.preset.cmdline({
             ["<tab>"] = cmp.mapping({
                 i = function(fallback)
                     if cmp.visible() then
@@ -126,5 +124,23 @@ cmp.setup {
                     end
                 end
             }),
+            ["<C-j>"] = cmp.mapping.scroll_docs(3),
+            ["<C-k>"] = cmp.mapping.scroll_docs(-3),
         }),
+    formatting = {
+        format = function(_, vim_item)
+            vim_item.kind = icons[vim_item.kind] or vim_item.kind
+            return vim_item
+        end,
+    },
+    window = {
+        completion = {
+            border = "rounded",
+            winhighlight = "Normal:CmpNormal"
+        },
+        documentation = {
+            border = "rounded",
+            winhighlight = "Normal:CmpNormal"
+        }
+    }
 }

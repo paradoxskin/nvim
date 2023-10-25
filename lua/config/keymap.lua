@@ -77,6 +77,9 @@ local maplist = {
     -- fun
     {from = "<Leader>;0", to = "<cmd>CellularAutomaton make_it_rain<CR>"},
 
+    -- execute
+    {from = "<Leader>;]", to = "<cmd>call system('pico8 -run '..expand('%')..' &')<CR>"}
+
 }
 
 -- bind
