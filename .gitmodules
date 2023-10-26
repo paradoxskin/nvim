@@ -61,3 +61,6 @@
 [submodule "pack/beaut/start/nvim-colorizer.lua"]
 	path = pack/beaut/start/nvim-colorizer.lua
 	url = git@github.com:norcalli/nvim-colorizer.lua.git
+[submodule "pack/useful/start/ranger.nvim"]
+	path = pack/useful/start/ranger.nvim
+	url = git@github.com:paradoxskin/ranger.nvim.git

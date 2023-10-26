@@ -64,6 +64,25 @@ for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
     vim.api.nvim_set_hl(0, group, {})
 end
 
+-- ranger
+require("ranger-nvim").setup{
+    enable_cmds = false,
+    replace_netrw = false,
+    keybinds = {
+        ["v"] = "vsplit",
+        ["s"] = "split",
+        ["e"] = "cur",
+    },
+    start_bind = "<Leader>ra",
+    ui = {
+        border = "rounded",
+        height = 0.7,
+        width = 0.9,
+        x = 0.5,
+        y = 0.5,
+    }
+}
+
 -- lsp
 require("lsp.all")
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }

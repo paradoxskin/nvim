@@ -21,6 +21,13 @@ vim.api.nvim_create_autocmd(
         command = "silent! mkview"
     }
 )
+vim.api.nvim_create_autocmd(
+    "TermEnter",
+    {
+        pattern = "*",
+        command = "IndentLinesDisable"
+    }
+)
 -- clipboard
 vim.opt.clipboard = ""
 -- case
