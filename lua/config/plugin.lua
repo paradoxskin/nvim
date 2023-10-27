@@ -101,6 +101,21 @@ vim.g.UltiSnipsJumpBackwardTrigger = "<c-f>"
 vim.g.UltiSnipsEditSplit = "vertical"
 vim.g.UltiSnipsSnippetDirectories = {"UltiSnips", "~/.config/nvim/UltiSnips"}
 
+-- aerial
+require("aerial").setup({
+    on_attach = function(bufnr)
+        vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+        vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+    end,
+    show_guides = true,
+    guides = {
+        mid_item = "├─",
+        last_item = "╰─",
+        nested_top = "│ ",
+        whitespace = "  ",
+    },
+})
+
 -- nvim-cmp
 local cmp = require("cmp")
 local icons = {

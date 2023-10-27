@@ -64,3 +64,6 @@
 [submodule "pack/useful/start/ranger.nvim"]
 	path = pack/useful/start/ranger.nvim
 	url = git@github.com:paradoxskin/ranger.nvim.git
+[submodule "pack/useful/start/aerial.nvim"]
+	path = pack/useful/start/aerial.nvim
+	url = git@github.com:stevearc/aerial.nvim.git

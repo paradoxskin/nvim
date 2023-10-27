@@ -73,6 +73,10 @@ local maplist = {
     {from = "<Leader>;g", to = "<cmd>Telescope live_grep<CR>"},
     {from = "<Leader>;f", to = "<cmd>Telescope find_files<CR>"},
     {from = "<Leader>;-", to = "<cmd>Telescope diagnostics<CR>"},
+    {from = "<Leader>;a", to = "<cmd>Telescope aerial<CR>"},
+
+    -- aerial
+    {from = "<Leader>a", to = "<cmd>AerialToggle!<CR>"},
 
     -- fun
     {from = "<Leader>;0", to = "<cmd>CellularAutomaton make_it_rain<CR>"},
