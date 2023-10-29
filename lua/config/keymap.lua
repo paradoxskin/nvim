@@ -1,24 +1,3 @@
--- custom function
-local keybind = function(line)
-    local mode = line.mode
-    if mode == nil then
-        mode = "n"
-    end
-    if line.opts ~= nil then
-        vim.keymap.set(mode, line.from, line.to, line.opts)
-    else
-        vim.keymap.set(mode, line.from, line.to)
-    end
-end
-
-function TriggerDiagonstic()
-    if vim.diagnostic.is_disabled() then
-        vim.diagnostic.enable()
-    else
-        vim.diagnostic.disable()
-    end
-end
-
 -- maplist
 vim.g.mapleader = " "
 local maplist = {
@@ -58,6 +37,12 @@ local maplist = {
     {from = "<C-y>", to = "mTggVG\"+y"},
     {from = "<C-y>", to = "mT\"+y", mode = "v"},
 
+    -- snazzy
+    {from = "<Leader>Z", to = function()
+        vim.g.SnazzyTransparent = 1 - vim.g.SnazzyTransparent
+        vim.api.nvim_command("color snazzy")
+    end},
+
     -- lsp
     {from = "<Leader>g", to = "<cmd>lua vim.lsp.buf.definition()<CR>"}, -- jump float quickfix TODO
     {from = "<Leader>d", to = "<cmd>lua TriggerDiagonstic()<CR>"},
@@ -87,11 +72,33 @@ local maplist = {
 
 }
 
--- bind
+-- custom function
+local keybind = function(line)
+    local mode = line.mode
+    if mode == nil then
+        mode = "n"
+    end
+    if line.opts ~= nil then
+        vim.keymap.set(mode, line.from, line.to, line.opts)
+    else
+        vim.keymap.set(mode, line.from, line.to)
+    end
+end
+
+function TriggerDiagonstic()
+    if vim.diagnostic.is_disabled() then
+        vim.diagnostic.enable()
+    else
+        vim.diagnostic.disable()
+    end
+end
+
 local exec = function()
     for _, line in ipairs(maplist) do
         keybind(line)
     end
 end
 
+
+-- bind
 exec()
