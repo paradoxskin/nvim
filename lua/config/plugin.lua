@@ -63,6 +63,8 @@ require("nvim-treesitter.configs").setup {
 for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
     vim.api.nvim_set_hl(0, group, {})
 end
+vim.opt.fdm = "manual"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- ranger
 require("ranger-nvim").setup{

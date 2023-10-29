@@ -7,27 +7,6 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("$HOME/.cache/nvim/undo")
 vim.bo.formatoptions = "jcroqlt"
 vim.opt.mouse = ""
-vim.api.nvim_create_autocmd(
-    "BufWinEnter",
-    {
-        pattern = "*",
-        command = "silent! loadview"
-    }
-)
-vim.api.nvim_create_autocmd(
-    "BufWinLeave",
-    {
-        pattern = "*",
-        command = "silent! mkview"
-    }
-)
-vim.api.nvim_create_autocmd(
-    "TermEnter",
-    {
-        pattern = "*",
-        command = "IndentLinesDisable"
-    }
-)
 -- clipboard
 vim.opt.clipboard = ""
 -- case
@@ -51,3 +30,12 @@ vim.opt.fillchars = {
     lastline = "@",
     vert = "│"
 }
+-- function
+
+function Myindent()
+    local line_text = vim.fn.getline(".")
+    if vim.fn.mode() == "n" and not string.match(line_text, '^[%s\t]*$') then
+        return require("nvim-treesitter.indent").get_indent(vim.fn.line("."))
+    end
+    return -1
+end

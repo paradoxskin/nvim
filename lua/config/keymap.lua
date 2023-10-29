@@ -50,6 +50,7 @@ local maplist = {
     {from = "<Leader>a", to = "mTggVG"},
     {from = "<Leader>b", to = "`Tzz"},
     {from = "<Leader><CR>", to = "<cmd>set invhlsearch<CR>"},
+    {from = "<Leader>M", to = ""},
 
     -- ctrl
     {from = "<C-z>", to = ":qa!"},
