@@ -17,6 +17,15 @@ vim.g.lightline = {
     },
 }
 
+-- cfdufo
+require("cfdufo").setup {
+    bufline = {
+        keybind = "<Leader>s",
+        always_top = true,
+        winblend = 20,
+    },
+}
+
 -- boringBubble.nvim
 vim.g.bubble_map = {" ", " "}
 vim.g.bubble_len = 3

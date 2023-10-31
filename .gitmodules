@@ -67,3 +67,6 @@
 [submodule "pack/useful/start/aerial.nvim"]
 	path = pack/useful/start/aerial.nvim
 	url = git@github.com:stevearc/aerial.nvim.git
+[submodule "pack/beaut/start/cfdufo.nvim"]
+	path = pack/beaut/start/cfdufo.nvim
+	url = git@github.com:paradoxskin/cfdufo.nvim.git
