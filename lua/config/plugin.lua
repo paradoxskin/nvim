@@ -130,11 +130,11 @@ require("aerial").setup({
 -- nvim-cmp
 local cmp = require("cmp")
 local icons = {
-    Function = "󰯻 ",
-    Snippet = " ",
-    Keyword = " ",
-    Variable = "󰰫 ",
-    Text = "󰊄 ",
+    Function = "󰯻\u{00a0}",
+    Snippet = "\u{00a0}",
+    Keyword = "u{00a0}",
+    Variable = "󰰫\u{00a0}",
+    Text = "\u{00a0}",
 }
 cmp.setup {
     snippet = {

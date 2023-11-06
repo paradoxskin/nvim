@@ -25,8 +25,9 @@ vim.opt.pumblend = 20
 vim.cmd[[colorscheme snazzy]]
 vim.opt.cursorline = true
 vim.opt.showmode = false
+vim.opt.foldtext = "v:lua.MyFoldText()"
 vim.opt.fillchars = {
-    fold = "-",
+    fold = " ",
     eob = "~",
     lastline = "@",
     vert = "│"
@@ -39,4 +40,11 @@ function Myindent()
         return require("nvim-treesitter.indent").get_indent(vim.fn.line("."))
     end
     return -1
+end
+
+function MyFoldText()
+    local len = 55
+    local text = '▶ ' .. vim.fn.getline(vim.v.foldstart)
+    text = text .. string.rep(' ', math.max(1, len - string.len(text))) ..'│  ' .. (vim.v.foldend - vim.v.foldstart + 1) .. ' '
+    return text
 end
