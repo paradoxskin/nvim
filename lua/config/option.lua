@@ -44,7 +44,15 @@ end
 
 function MyFoldText()
     local len = 55
-    local text = '▶ ' .. vim.fn.getline(vim.v.foldstart)
-    text = text .. string.rep(' ', math.max(1, len - string.len(text))) ..'│  ' .. (vim.v.foldend - vim.v.foldstart + 1) .. ' '
+    local text = vim.fn.getline(vim.v.foldstart)
+    if len <= string.len(text) then
+        text = string.sub(text, 1, len - 5) .. ".."
+    end
+    local cur = vim.fn.line('.')
+    if vim.v.foldstart <= cur and cur <= vim.v.foldend then
+        text = '▶ ' .. text .. string.rep(' ', math.max(1, len - string.len(text)) - 2) ..'█ 󱛱 ' .. (vim.v.foldend - vim.v.foldstart + 1) .. ' '
+    else
+        text = text .. string.rep(' ', math.max(1, len - string.len(text))) ..'│  ' .. (vim.v.foldend - vim.v.foldstart + 1) .. ' '
+    end
     return text
 end

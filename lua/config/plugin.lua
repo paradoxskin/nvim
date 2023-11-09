@@ -41,7 +41,8 @@ require('gitsigns').setup{
 
 -- treesitter
 require("nvim-treesitter.configs").setup {
-    ensure_installed = "all",
+    --ensure_installed = "all",
+    ensure_installed = {"lua", "python", "cpp", "javascript", "go", "rust", "markdown", "sql", "java", "bash"},
     sync_install = false,
     auto_install = true,
     ignore_install = {},
@@ -52,7 +53,6 @@ require("nvim-treesitter.configs").setup {
         select = {
             enable = true,
             lookahead = true,
-
             keymaps = {
                 ["af"] = "@function.outer",
                 ["if"] = "@function.inner",
@@ -74,6 +74,14 @@ for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
 end
 vim.opt.fdm = "manual"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- maybe pico8?
+require("nvim-treesitter.parsers").get_parser_configs().pico8 = {
+  install_info = {
+    url = "~/workspace/tree-sitter-pico8/",
+    files = {"src/parser.c"},
+  },
+  filetype = "pico8", -- if filetype does not match the parser name
+}
 
 -- ranger
 require("ranger-nvim").setup{
