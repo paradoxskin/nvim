@@ -19,9 +19,6 @@
 [submodule "pack/useful/start/vim-snippets"]
 	path = pack/useful/start/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
-[submodule "pack/syntax/start/vim-pico8-syntax"]
-	path = pack/syntax/start/vim-pico8-syntax
-	url = git@github.com:paradoxskin/vim-pico8-syntax.git
 [submodule "pack/cmp/start/cmp-buffer"]
 	path = pack/cmp/start/cmp-buffer
 	url = git@github.com:hrsh7th/cmp-buffer.git
@@ -70,3 +67,6 @@
 [submodule "pack/beaut/start/cfdufo.nvim"]
 	path = pack/beaut/start/cfdufo.nvim
 	url = git@github.com:paradoxskin/cfdufo.nvim.git
+[submodule "pack/syntax/start/tree-sitter-pico8"]
+	path = pack/syntax/start/tree-sitter-pico8
+	url = git@github.com:paradoxskin/tree-sitter-pico8.git

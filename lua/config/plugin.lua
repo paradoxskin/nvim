@@ -42,7 +42,7 @@ require('gitsigns').setup{
 -- treesitter
 require("nvim-treesitter.configs").setup {
     --ensure_installed = "all",
-    ensure_installed = {"lua", "python", "cpp", "javascript", "go", "rust", "markdown", "sql", "java", "bash"},
+    ensure_installed = {"lua", "python", "cpp", "javascript", "go", "rust", "markdown", "sql", "java", "bash", "pico8"},
     sync_install = false,
     auto_install = true,
     ignore_install = {},
@@ -77,7 +77,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- maybe pico8?
 require("nvim-treesitter.parsers").get_parser_configs().pico8 = {
   install_info = {
-    url = "~/workspace/tree-sitter-pico8/",
+    url = "https://github.com/paradoxskin/tree-sitter-pico8.git",
     files = {"src/parser.c"},
   },
   filetype = "pico8", -- if filetype does not match the parser name
