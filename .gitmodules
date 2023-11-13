@@ -70,3 +70,6 @@
 [submodule "pack/syntax/start/tree-sitter-pico8"]
 	path = pack/syntax/start/tree-sitter-pico8
 	url = git@github.com:paradoxskin/tree-sitter-pico8.git
+[submodule "pack/default/start/playground"]
+	path = pack/default/start/playground
+	url = git@github.com:nvim-treesitter/playground.git
