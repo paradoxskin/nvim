@@ -42,7 +42,7 @@ require('gitsigns').setup{
 -- treesitter
 require("nvim-treesitter.configs").setup {
     --ensure_installed = "all",
-    ensure_installed = {"lua", "python", "cpp", "javascript", "go", "rust", "markdown", "sql", "java", "bash", "pico8"},
+    ensure_installed = {"lua", "python", "cpp", "javascript", "go", "rust", "markdown", "sql", "java", "bash"},
     sync_install = false,
     auto_install = true,
     ignore_install = {},
@@ -151,6 +151,7 @@ cmp.setup {
             vim.fn["UltiSnips#Anon"](args.body)
         end,
     },
+    preselect = cmp.PreselectMode.None,
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "ultisnips" },
