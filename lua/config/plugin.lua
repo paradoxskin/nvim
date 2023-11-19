@@ -27,9 +27,12 @@ require("cfdufo").setup {
 }
 
 -- boringBubble.nvim
-vim.g.bubble_map = {" ", " "}
-vim.g.bubble_len = 3
-vim.g.bubble_show = 0
+require("boringBubble").setup({
+    bubble = {
+        map = {" ", " "},
+        len = 3
+    }
+})
 
 -- gitsign
 require('gitsigns').setup{
