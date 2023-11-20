@@ -32,7 +32,7 @@ require("cfdufo").setup {
 -- boringBubble.nvim
 require("boringBubble").setup({
     bubble = {
-        map = {" ", " ", "󱁂 ", "󱁇 ", "󰠓 ", " "},
+        map = {" ", " ", "󱁂 ", "󱁇 ", "󰠓 ", "󰐂 ", " ", " ", "󰌽 ", "󰚩 ", "󰣐 ", " "},
         len = 3
     },
     fun = {
