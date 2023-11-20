@@ -39,8 +39,24 @@ local maplist = {
 
     -- snazzy
     {from = "<Leader>Z", to = function()
+        if vim.g.SnazzyTransparent == 1 then
+            vim.api.nvim_set_hl(0, "Normal", {bg = "#282a36"})
+            vim.api.nvim_set_hl(0, "SignColumn", {bg = "#282a36"})
+            vim.api.nvim_set_hl(0, "DiffAdd", {bg = "#3a3d4d"})
+            vim.api.nvim_set_hl(0, "DiffDelete", {bg = "#3a3d4d"})
+            vim.api.nvim_set_hl(0, "DiffChange", {bg = "#3a3d4d"})
+            vim.api.nvim_set_hl(0, "SignifyLineDelete", {bg = "#282a36"})
+            vim.api.nvim_set_hl(0, "SignifyLineChange", {bg = "#282a36"})
+        else
+            vim.api.nvim_set_hl(0, "Normal", {bg = "NONE"})
+            vim.api.nvim_set_hl(0, "SignColumn", {bg = "NONE"})
+            vim.api.nvim_set_hl(0, "DiffAdd", {bg = "NONE"})
+            vim.api.nvim_set_hl(0, "DiffDelete", {bg = "NONE"})
+            vim.api.nvim_set_hl(0, "DiffChange", {bg = "NONE"})
+            vim.api.nvim_set_hl(0, "SignifyLineDelete", {bg = "NONE"})
+            vim.api.nvim_set_hl(0, "SignifyLineChange", {bg = "NONE"})
+        end
         vim.g.SnazzyTransparent = 1 - vim.g.SnazzyTransparent
-        vim.api.nvim_command("color snazzy")
     end},
 
     -- lsp

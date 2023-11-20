@@ -16,6 +16,9 @@ vim.g.lightline = {
         bubble = '%{g:bubble}'
     },
 }
+vim.api.nvim_create_autocmd("TextChanged", {pattern = "*", callback = function()
+    vim.api.nvim_call_function("lightline#update", {})
+end})
 
 -- cfdufo
 require("cfdufo").setup {
@@ -27,9 +30,34 @@ require("cfdufo").setup {
 }
 
 -- boringBubble.nvim
-vim.g.bubble_map = {" ", " "}
-vim.g.bubble_len = 3
-vim.g.bubble_show = 0
+require("boringBubble").setup({
+    bubble = {
+        map = {" ", " ", "󱁂 ", "󱁇 ", "󰠓 ", " "},
+        len = 3
+    },
+    fun = {
+        prize = function(number)
+            if vim.g.SnazzyTransparent == 1 then
+                vim.api.nvim_set_hl(0, "Normal", {bg = "#282a36"})
+                vim.api.nvim_set_hl(0, "SignColumn", {bg = "#282a36"})
+                vim.api.nvim_set_hl(0, "DiffAdd", {bg = "#3a3d4d"})
+                vim.api.nvim_set_hl(0, "DiffDelete", {bg = "#3a3d4d"})
+                vim.api.nvim_set_hl(0, "DiffChange", {bg = "#3a3d4d"})
+                vim.api.nvim_set_hl(0, "SignifyLineDelete", {bg = "#282a36"})
+                vim.api.nvim_set_hl(0, "SignifyLineChange", {bg = "#282a36"})
+            else
+                vim.api.nvim_set_hl(0, "Normal", {bg = "NONE"})
+                vim.api.nvim_set_hl(0, "SignColumn", {bg = "NONE"})
+                vim.api.nvim_set_hl(0, "DiffAdd", {bg = "NONE"})
+                vim.api.nvim_set_hl(0, "DiffDelete", {bg = "NONE"})
+                vim.api.nvim_set_hl(0, "DiffChange", {bg = "NONE"})
+                vim.api.nvim_set_hl(0, "SignifyLineDelete", {bg = "NONE"})
+                vim.api.nvim_set_hl(0, "SignifyLineChange", {bg = "NONE"})
+            end
+            vim.g.SnazzyTransparent = 1 - vim.g.SnazzyTransparent
+        end
+    }
+})
 
 -- gitsign
 require('gitsigns').setup{
@@ -75,13 +103,12 @@ for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
 end
 vim.opt.fdm = "manual"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- maybe pico8?
 require("nvim-treesitter.parsers").get_parser_configs().pico8 = {
   install_info = {
     url = "https://github.com/paradoxskin/tree-sitter-pico8.git",
     files = {"src/parser.c"},
   },
-  filetype = "pico8", -- if filetype does not match the parser name
+  filetype = "pico8",
 }
 
 -- ranger
