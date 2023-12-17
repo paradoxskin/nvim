@@ -1,0 +1,7 @@
+snippet debug "write to file" b
+// debug
+FILE *fp = NULL;
+fp = fopen("/tmp/debug.txt", "a+");
+fprintf(fp, "$1", $2);
+fclose(fp);
+endsnippet

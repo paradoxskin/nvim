@@ -1,5 +1,6 @@
 -- indentLine
 vim.g.indentLine_char = "┆"
+vim.api.nvim_exec("set list lcs=tab:\\┆\\ ", true)
 
 -- lightline
 vim.g.lightline = {
@@ -32,29 +33,29 @@ require("cfdufo").setup {
 -- boringBubble.nvim
 require("boringBubble").setup({
     bubble = {
-        map = {" ", " ", "󱁂 ", "󱁇 ", "󰠓 ", "󰐂 ", " ", " ", "󰌽 ", "󰚩 ", "󰣐 ", " "},
+        map = {" ", "󱁂 ", "󰠓 ", "󰐂 ", " ", " ", "󰌽 ", "󰚩 ", "󰣐 ", " "},
         len = 3
     },
     fun = {
         prize = function(number)
-            if vim.g.SnazzyTransparent == 1 then
-                vim.api.nvim_set_hl(0, "Normal", {bg = "#282a36"})
-                vim.api.nvim_set_hl(0, "SignColumn", {bg = "#282a36"})
-                vim.api.nvim_set_hl(0, "DiffAdd", {bg = "#3a3d4d"})
-                vim.api.nvim_set_hl(0, "DiffDelete", {bg = "#3a3d4d"})
-                vim.api.nvim_set_hl(0, "DiffChange", {bg = "#3a3d4d"})
-                vim.api.nvim_set_hl(0, "SignifyLineDelete", {bg = "#282a36"})
-                vim.api.nvim_set_hl(0, "SignifyLineChange", {bg = "#282a36"})
-            else
-                vim.api.nvim_set_hl(0, "Normal", {bg = "NONE"})
-                vim.api.nvim_set_hl(0, "SignColumn", {bg = "NONE"})
-                vim.api.nvim_set_hl(0, "DiffAdd", {bg = "NONE"})
-                vim.api.nvim_set_hl(0, "DiffDelete", {bg = "NONE"})
-                vim.api.nvim_set_hl(0, "DiffChange", {bg = "NONE"})
-                vim.api.nvim_set_hl(0, "SignifyLineDelete", {bg = "NONE"})
-                vim.api.nvim_set_hl(0, "SignifyLineChange", {bg = "NONE"})
-            end
-            vim.g.SnazzyTransparent = 1 - vim.g.SnazzyTransparent
+            --if vim.g.SnazzyTransparent == 1 then
+            --    vim.api.nvim_set_hl(0, "Normal", {bg = "#282a36"})
+            --    vim.api.nvim_set_hl(0, "SignColumn", {bg = "#282a36"})
+            --    vim.api.nvim_set_hl(0, "DiffAdd", {bg = "#3a3d4d"})
+            --    vim.api.nvim_set_hl(0, "DiffDelete", {bg = "#3a3d4d"})
+            --    vim.api.nvim_set_hl(0, "DiffChange", {bg = "#3a3d4d"})
+            --    vim.api.nvim_set_hl(0, "SignifyLineDelete", {bg = "#282a36"})
+            --    vim.api.nvim_set_hl(0, "SignifyLineChange", {bg = "#282a36"})
+            --else
+            --    vim.api.nvim_set_hl(0, "Normal", {bg = "NONE"})
+            --    vim.api.nvim_set_hl(0, "SignColumn", {bg = "NONE"})
+            --    vim.api.nvim_set_hl(0, "DiffAdd", {bg = "NONE"})
+            --    vim.api.nvim_set_hl(0, "DiffDelete", {bg = "NONE"})
+            --    vim.api.nvim_set_hl(0, "DiffChange", {bg = "NONE"})
+            --    vim.api.nvim_set_hl(0, "SignifyLineDelete", {bg = "NONE"})
+            --    vim.api.nvim_set_hl(0, "SignifyLineChange", {bg = "NONE"})
+            --end
+            --vim.g.SnazzyTransparent = 1 - vim.g.SnazzyTransparent
         end
     }
 })

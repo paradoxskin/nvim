@@ -30,10 +30,15 @@ local maplist = {
     {from = "<Leader>b", to = "`Tzz"},
     {from = "<Leader><CR>", to = "<cmd>set invhlsearch<CR>"},
     {from = "<Leader>M", to = ""},
+    {from = "<Leader>t", to = function()
+        local command = "set tabstop=" .. (10 - vim.opt.tabstop._value)
+        vim.api.nvim_exec(command, true)
+    end},
 
     -- ctrl
     {from = "<C-z>", to = ":qa!"},
     {from = "<C-p>", to = "mT\"+p"},
+    {from = "<C-p>", to = "mT\"+p", mode = "v"},
     {from = "<C-y>", to = "mTggVG\"+y"},
     {from = "<C-y>", to = "mT\"+y", mode = "v"},
 
@@ -60,7 +65,7 @@ local maplist = {
     end},
 
     -- lsp
-    {from = "<Leader>g", to = "<cmd>lua vim.lsp.buf.definition()<CR>"}, -- jump float quickfix TODO
+    -- {from = "<Leader>g", to = "<cmd>lua vim.lsp.buf.definition()<CR>"}, -- jump float quickfix; use telescope
     {from = "<Leader>d", to = "<cmd>lua TriggerDiagonstic()<CR>"},
     {from = "<Leader>rn", to = "<cmd>lua vim.lsp.buf.rename()<CR>"},
     {from = "<Leader>K", to = "<cmd>lua vim.lsp.buf.hover()<CR>"},
@@ -69,6 +74,7 @@ local maplist = {
 
     -- telescope
     {from = "<Leader><space>", to = "<cmd>Telescope buffers<CR>"},
+    {from = "<Leader>g", to = "<cmd>Telescope lsp_definitions<CR>"},
     {from = "<Leader>;;", to = "<cmd>Telescope<CR>"},
     {from = "<Leader>;/", to = "<cmd>Telescope current_buffer_fuzzy_find<CR>"},
     {from = "<Leader>;`", to = "<cmd>Telescope oldfiles<CR>"},
@@ -76,6 +82,7 @@ local maplist = {
     {from = "<Leader>;f", to = "<cmd>Telescope find_files<CR>"},
     {from = "<Leader>;-", to = "<cmd>Telescope diagnostics<CR>"},
     {from = "<Leader>;a", to = "<cmd>Telescope aerial<CR>"},
+    {from = "<Leader>;r", to = "<cmd>Telescope lsp_references<CR>"},
 
     -- aerial
     {from = "<Leader>a", to = "<cmd>AerialToggle!<CR>"},
