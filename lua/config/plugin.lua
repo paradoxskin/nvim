@@ -28,6 +28,7 @@ require("cfdufo").setup {
         always_top = true,
         winblend = 20,
     },
+    fcitx5_support = true
 }
 
 -- boringBubble.nvim
