@@ -25,9 +25,6 @@
 [submodule "pack/cmp/start/cmp-nvim-lsp"]
 	path = pack/cmp/start/cmp-nvim-lsp
 	url = git@github.com:hrsh7th/cmp-nvim-lsp.git
-[submodule "pack/cmp/start/cmp-nvim-ultisnips"]
-	path = pack/cmp/start/cmp-nvim-ultisnips
-	url = git@github.com:quangnguyen30192/cmp-nvim-ultisnips.git
 [submodule "pack/cmp/start/cmp-path"]
 	path = pack/cmp/start/cmp-path
 	url = git@github.com:hrsh7th/cmp-path.git
