@@ -1,6 +1,9 @@
 -- indentLine
 vim.g.indentLine_char = "┆"
 vim.api.nvim_exec("set list lcs=tab:\\┆\\ ", true)
+vim.api.nvim_create_autocmd("FileType", {pattern = "json", callback = function()
+    vim.api.nvim_command("IndentLinesDisable")
+end})
 
 -- lightline
 vim.g.lightline = {
