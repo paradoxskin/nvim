@@ -30,6 +30,7 @@ local maplist = {
     {from = "<Leader>b", to = "`Tzz"},
     {from = "<Leader><CR>", to = "<cmd>set invhlsearch<CR>"},
     {from = "<Leader>M", to = ""},
+    {from = "<Leader>p", to = "<cmd>echo expand('%:p')<CR>"},
     {from = "<Leader>t", to = function()
         local command = "set tabstop=" .. (10 - vim.opt.tabstop._value)
         vim.api.nvim_exec(command, true)
